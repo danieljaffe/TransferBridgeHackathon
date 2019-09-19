@@ -1,4 +1,5 @@
 // Sets console.log() to print to Evothings console
+//test
 if (window.hyper && window.hyper.log) { console.log = hyper.log }
 
 document.addEventListener(
@@ -43,7 +44,7 @@ app.connect = function () {
 }
 
 function scanSuccess(device) {
-    if (device.name != null && device.address=='') {
+    if (device.name != null && device.address=='424002B5-7FD1-E4D7-673A-726F525D26C3') {
         console.log('Found' + device.name);
         device.connect(connectSuccess, connectFailure);
         evothings.easyble.stopScan();
@@ -115,7 +116,7 @@ app.sendData = function (data) {
 }
 
 app.receivedData = function (data) {
-    //0X16
-    if (data == 0x16) {    //vibrate the phone, change the color of button, .... 
+    if (data == 0x16 ) {  
+
     }
 }
