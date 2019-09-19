@@ -20,10 +20,10 @@
 
 </head>
 
-<body>
+<body style = "background-color: lightblue">
 
-	<header>
-		<button class="back" onclick="history.back()">
+	<header style = "background-color: white">
+		<button class="back" onclick="history.back()" style = 'background-color: navy;'>
 			<img src="res/left.png" />
 		</button>
 
@@ -39,15 +39,50 @@
 	<script src="libs/evothings/easyble/easyble.js"></script>
 
 	<!-- START VIEW -->
-	<div id="startView">
-		<h2 style="text-align:center">Robotic Arm Bluetooth</h2>
-		<img class="center" style="width:50%" src="./ui/images/walle.png" alt="robot arm" id='wall-e-img'>
+	<div id="startView" style = "background-color: lightblue; display: none">
+		<h1 style="text-align:center; 
+		-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" >
+		Robotic Arm Bluetooth</h1>
+		
+		<div id= 'startwrapper'>
+			<img class="center" style="width:50%" src="teddybear.jpg" alt="robot arm" id='teddybear'>
 	
-		<button class="button green" id='start-scan' style='width: 100%;' onclick="/*TODO: start searching for devices*/"> Start </button>
+			<button class="button green" id='start-scan' style='width: 100%;
+				text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;;
+				font-weight: bolder;
+				font-size: xx-large;
+				font-family: serif;
+				-webkit-text-fill-color: darkslateblue;' 
+				onclick="/*TODO: start searching for devices*/"> Start </button>
+			</div>
+		
 	</div>
 
 	<!-- CONTROL PANEL -->
-	<div id='controlsView' class='wrapper' style='display: none'>
+	<div id='controlsView' class='wrapper' >
+
+		<div class='button-group vertical'>
+			<p class='group-title'>Title</p>
+			<div class='data'></div>
+
+			<div class='button'>
+			</div>
+
+			<div class='button'>
+				
+			</div> 
+		</div>
+
+		<div class='button-group vertical'>
+			<p class='group-title'>Title</p>
+			<div class='data'></div>
+
+			<div class='button'>
+			</div>
+
+			<div class='button'>
+			</div> 
+		</div>
 
 		<div class='button-group vertical'>
 			<p class='group-title'>Title</p>
@@ -74,28 +109,34 @@
 		<div id='center' class='center-wrapper'>
 			<div class='button-group'>
 				<div class='title-data-row'>
-					<p class='group-title'>Title</p>
+					<p class='group-title'>Base</p>
 					<div class='data'></div>
 				</div>
 				<div class='horizontal'>
 					<div class='button'>
+							<img src = 'counterclockwise.png' height = '100%'>
 					</div>
 			
 					<div class='button'>
+							<img src = 'clockwise.png' height = '100%'>
 					</div>
 				</div>
 			</div>
 
 			<div class='button-group'>
 				<div class='title-data-row'>
-					<p class='group-title'>Title</p>
+					<p class='group-title'>Grip</p>
 					<div class='data'></div>
 				</div>
 				<div class='horizontal'>
-					<div class='button'>
+					<div class='button' id = 'closebutton' style = 'font-size: unset; background-color: navy;
+					-webkit-text-fill-color: gold;' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
+						CLOSE
 					</div>
 			
-					<div class='button'>
+					<div class='button' id= 'openbutton' style = 'font-size: unset; background-color: navy;
+					-webkit-text-fill-color: gold;' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
+						OPEN
 					</div>
 				</div>
 			</div>

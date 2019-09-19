@@ -14,12 +14,22 @@ app.showControls = function()
 {
     $('#disconnect').prop('disabled', false);
     $('#startView').hide();
-    $('#controlView').show();
+    $('#controlsView').show();
 }
 
 app.showStart = function()
 {
     $('#disconnect').prop('disabled', true);
     $('#startView').show();
-    $('#controlView').hide();
+    $('#controlsView').hide();
+}
+
+function pressButton(elementid){
+    let theid = elementid;
+document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
+}
+
+function unpress(elementid){
+    let theid = elementid;
+document.getElementById(`${theid}`).style.backgroundColor = 'navy';
 }
