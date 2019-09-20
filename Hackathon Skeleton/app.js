@@ -139,7 +139,6 @@ function pressButton(elementid, callback){
     callback();
 
 }
-buttonOff = document.addEventListener('touchend', function(){
 
 function unpress(elementid){
     let theid = elementid;
@@ -205,4 +204,9 @@ function pressStart() {
     document.getElementById("startView").style.display="none";
     document.getElementById("controlsView").style.display="";
   
+}
+function pressDisconnect() {
+    document.getElementById("startView").style.display = "";
+    document.getElementById("controlsView").style.display="none";
+    app.disconnect();
 }
