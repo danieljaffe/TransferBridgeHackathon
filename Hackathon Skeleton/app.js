@@ -137,7 +137,7 @@ app.receivedData = function (data) {
 let buttonOff = false;
 buttonOff = document.addEventListener('touchend', function(){
     console.log("finger removed");
-  //  app.sendData([0]);
+    app.sendData([0]);
 })
 
 function BaseTurnLeft() {
