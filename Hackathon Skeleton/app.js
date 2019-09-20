@@ -133,60 +133,71 @@ app.receivedData = function (data) {
 
     }
 }
+function pressButton(elementid, callback){
+    let theid = elementid;
+    document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
+    callback();
 
-let buttonOff = false;
+}
 buttonOff = document.addEventListener('touchend', function(){
+
+function unpress(elementid){
+    let theid = elementid;
+    document.getElementById(`${theid}`).style.backgroundColor = 'skyblue';
+    buttonOff();
+}
+function buttonOff() {
     console.log("finger removed");
-  //  app.sendData([0]);
-})
+    app.sendData([0x0,0x0]);
+}
 
 function BaseTurnLeft() {
     console.log("BaseTurnLeft called");
-    app.sendData([1]);
+    app.sendData([0x1, 0x3]);
 }
 function BaseTurnRight() {
     console.log("BaseTurnRight called");
-    app.sendData([2]);
+    app.sendData([0x1,0x4]);
 }
 function BaseForward() {
     console.log("BaseForward called");
-    app.sendData([3]);    
+    app.sendData([0x1,0x5]);    
 }
 function BaseBackward(){
     console.log("BaseBackward called");
-    app.sendData([4]);
+    app.sendData([0x1,0x6]);
 }
 function ShoulderUp() {
     console.log("ShoulderUp called");
-    app.sendData([5]);
+    app.sendData([0x1,0x7]);
 }
 function ShoulderDown() {
     console.log("ShoulderDown called");
-    app.sendData([6]);
+    app.sendData([0x1,0x8]);
 }
-function ElbowFoward() {
+function ElbowForward() {
     console.log("ElbowForward called");
-    app.sendData([7]);
+    app.sendData([0x1,0x9]);
 }
 function ElbowBackward() {
     console.log("ElbowBackward called");
-    app.sendData([8]);
+    app.sendData([0x1,0xA]);
 }
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
-    app.sendData([9]);
+    app.sendData([0x1,0xB]);
 }
 function WristTurnRight() {
     console.log("WristTurnRight called");
-    app.sendData([10]);
+    app.sendData([0x1,0xC]);
 }
 function Grip() {
     console.log("Grip called");
-    app.sendData([11]);
+    app.sendData([0x1,0xD]);
 }
 function Release() {
     console.log("Release called");
-    app.sendData([12]);
+    app.sendData([0x1,0xE]);
 }
 
 function pressStart() {
