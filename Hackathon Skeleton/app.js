@@ -147,56 +147,56 @@ function unpress(elementid){
 }
 function buttonOff() {
     console.log("finger removed");
-    app.sendData([0x0,0x0]);
+    app.sendData([0x00]);
 }
 
 function BaseTurnLeft() {
     console.log("BaseTurnLeft called");
-    app.sendData([0x1, 0x3]);
+    app.sendData([0x02]);
 }
 function BaseTurnRight() {
     console.log("BaseTurnRight called");
-    app.sendData([0x1,0x4]);
+    app.sendData([0x01]);
 }
 function BaseForward() {
     console.log("BaseForward called");
-    app.sendData([0x1,0x5]);    
+    app.sendData([0x0B]);    
 }
 function BaseBackward(){
     console.log("BaseBackward called");
-    app.sendData([0x1,0x6]);
+    app.sendData([0x0C]);
 }
 function ShoulderUp() {
     console.log("ShoulderUp called");
-    app.sendData([0x1,0x7]);
+    app.sendData([0x07]);
 }
 function ShoulderDown() {
     console.log("ShoulderDown called");
-    app.sendData([0x1,0x8]);
+    app.sendData([0x08]);
 }
 function ElbowForward() {
     console.log("ElbowForward called");
-    app.sendData([0x1,0x9]);
+    app.sendData([0x05]);
 }
 function ElbowBackward() {
     console.log("ElbowBackward called");
-    app.sendData([0x1,0xA]);
+    app.sendData([0x06]);
 }
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
-    app.sendData([0x1,0xB]);
+    app.sendData([0x04]);
 }
 function WristTurnRight() {
     console.log("WristTurnRight called");
-    app.sendData([0x1,0xC]);
+    app.sendData([0x03]);
 }
 function Grip() {
     console.log("Grip called");
-    app.sendData([0x1,0xD]);
+    app.sendData([0x09]);
 }
 function Release() {
     console.log("Release called");
-    app.sendData([0x1,0xE]);
+    app.sendData([0x0A]);
 }
 
 function pressStart() {
