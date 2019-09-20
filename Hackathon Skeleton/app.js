@@ -181,3 +181,7 @@ function Release() {
     console.log("Release called");
 }
 
+function pressStart() {
+    document.getElementById("startView").style.display="";
+    document.getElementById("controlsView").style.display="none";
+}
