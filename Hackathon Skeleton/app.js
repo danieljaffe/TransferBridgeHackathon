@@ -25,20 +25,23 @@ app.showStart = function()
     $('#controlsView').hide();
 }
 
-function pressButton(elementid){
+function pressButton(elementid, callback){
     let theid = elementid;
     document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
+    callback();
 }
 
 function unpress(elementid){
     let theid = elementid;
     document.getElementById(`${theid}`).style.backgroundColor = 'skyblue';
 }
+
 document.addEventListener( 
     'deviceready',
     function () {
         app.initialize();
-    });
+    }
+);
 
 app.initialize = function () {
     console.log('Initialized');
@@ -129,3 +132,52 @@ app.receivedData = function (data) {
 
     }
 }
+
+function BaseTurnLeft() {
+    console.log("BaseTurnLeft called");
+}
+
+function BaseTurnRight() {
+    console.log("BaseTurnRight called");
+}
+
+function BaseForward() {
+    console.log("BaseForward called");
+}
+
+function BaseBackward(){
+    console.log("BaseBackward called");
+}
+
+function ShoulderUp() {
+    console.log("ShoulderUp called");
+}
+
+function ShoulderDown() {
+    console.log("ShoulderDown called");
+}
+
+function ElbowFoward() {
+    console.log("ElbowForward called");
+}
+
+function ElbowBackward() {
+    console.log("ElbowBackward called");
+}
+
+function WristTurnLeft() {
+    console.log("WristTurnLeft called");
+}
+
+function WristTurnRight() {
+    console.log("WristTurnRight called");
+}
+
+function Grip() {
+    console.log("Grip called");
+}
+
+function Release() {
+    console.log("Release called");
+}
+
