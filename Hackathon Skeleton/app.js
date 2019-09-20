@@ -134,61 +134,56 @@ app.receivedData = function (data) {
     }
 }
 
+let buttonOff = false;
+buttonOff = document.addEventListener('touchend', function(){
+    console.log("finger removed");
+  //  app.sendData([0]);
+})
+
 function BaseTurnLeft() {
     console.log("BaseTurnLeft called");
-    app.device && app.device.writeDataArray(new Uint8Array([1]), app.CHARACTERISTIC_UUID);
+    app.sendData([1]);
 }
-
 function BaseTurnRight() {
     console.log("BaseTurnRight called");
-    app.device && app.device.writeDataArray(new Uint8Array([2]), app.CHARACTERISTIC_UUID);
+    app.sendData([2]);
 }
-
 function BaseForward() {
     console.log("BaseForward called");
-    app.device && app.device.writeDataArray(new Uint8Array([3]), app.CHARACTERISTIC_UUID);
+    app.sendData([3]);    
 }
-
 function BaseBackward(){
     console.log("BaseBackward called");
     app.device && app.device.writeDataArray(new Uint8Array([4]), app.CHARACTERISTIC_UUID);
 }
-
 function ShoulderUp() {
     console.log("ShoulderUp called");
     app.device && app.device.writeDataArray(new Uint8Array([5]), app.CHARACTERISTIC_UUID);
 }
-
 function ShoulderDown() {
     console.log("ShoulderDown called");
     app.device && app.device.writeDataArray(new Uint8Array([6]), app.CHARACTERISTIC_UUID);
 }
-
 function ElbowFoward() {
     console.log("ElbowForward called");
     app.device && app.device.writeDataArray(new Uint8Array([7]), app.CHARACTERISTIC_UUID);
 }
-
 function ElbowBackward() {
     console.log("ElbowBackward called");
     app.device && app.device.writeDataArray(new Uint8Array([8]), app.CHARACTERISTIC_UUID);
 }
-
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
     app.device && app.device.writeDataArray(new Uint8Array([9]), app.CHARACTERISTIC_UUID);
 }
-
 function WristTurnRight() {
     console.log("WristTurnRight called");
     app.device && app.device.writeDataArray(new Uint8Array([10]), app.CHARACTERISTIC_UUID);
 }
-
 function Grip() {
     console.log("Grip called");
     app.device && app.device.writeDataArray(new Uint8Array([11]), app.CHARACTERISTIC_UUID);
 }
-
 function Release() {
     console.log("Release called");
     app.device && app.device.writeDataArray(new Uint8Array([12]), app.CHARACTERISTIC_UUID);
@@ -198,4 +193,5 @@ function pressStart() {
     app.connect();
     document.getElementById("startView").style.display="none";
     document.getElementById("controlsView").style.display="";
+  
 }
