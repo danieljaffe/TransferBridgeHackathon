@@ -56,7 +56,7 @@ app.connect = function () {
 }
 
 function scanSuccess(device) {
-    if (device.name != null && device.address=='424002B5-7FD1-E4D7-673A-726F525D26C3') {
+    
     if (device.name != null && device.address=='D479B6B9-D64B-9AD7-72E1-B96D1D670E5C') {
         console.log('Found' + device.name + device.address);
         device.connect(connectSuccess, connectFailure);
@@ -136,50 +136,62 @@ app.receivedData = function (data) {
 
 function BaseTurnLeft() {
     console.log("BaseTurnLeft called");
+    app.device && app.device.writeDataArray(new Uint8Array([1]), app.CHARACTERISTIC_UUID);
 }
 
 function BaseTurnRight() {
     console.log("BaseTurnRight called");
+    app.device && app.device.writeDataArray(new Uint8Array([2]), app.CHARACTERISTIC_UUID);
 }
 
 function BaseForward() {
     console.log("BaseForward called");
+    app.device && app.device.writeDataArray(new Uint8Array([3]), app.CHARACTERISTIC_UUID);
 }
 
 function BaseBackward(){
     console.log("BaseBackward called");
+    app.device && app.device.writeDataArray(new Uint8Array([4]), app.CHARACTERISTIC_UUID);
 }
 
 function ShoulderUp() {
     console.log("ShoulderUp called");
+    app.device && app.device.writeDataArray(new Uint8Array([5]), app.CHARACTERISTIC_UUID);
 }
 
 function ShoulderDown() {
     console.log("ShoulderDown called");
+    app.device && app.device.writeDataArray(new Uint8Array([6]), app.CHARACTERISTIC_UUID);
 }
 
 function ElbowFoward() {
     console.log("ElbowForward called");
+    app.device && app.device.writeDataArray(new Uint8Array([7]), app.CHARACTERISTIC_UUID);
 }
 
 function ElbowBackward() {
     console.log("ElbowBackward called");
+    app.device && app.device.writeDataArray(new Uint8Array([8]), app.CHARACTERISTIC_UUID);
 }
 
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
+    app.device && app.device.writeDataArray(new Uint8Array([9]), app.CHARACTERISTIC_UUID);
 }
 
 function WristTurnRight() {
     console.log("WristTurnRight called");
+    app.device && app.device.writeDataArray(new Uint8Array([10]), app.CHARACTERISTIC_UUID);
 }
 
 function Grip() {
     console.log("Grip called");
+    app.device && app.device.writeDataArray(new Uint8Array([11]), app.CHARACTERISTIC_UUID);
 }
 
 function Release() {
     console.log("Release called");
+    app.device && app.device.writeDataArray(new Uint8Array([12]), app.CHARACTERISTIC_UUID);
 }
 
 function pressStart() {
