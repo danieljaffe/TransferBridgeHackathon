@@ -57,7 +57,8 @@ app.connect = function () {
 
 function scanSuccess(device) {
     if (device.name != null && device.address=='424002B5-7FD1-E4D7-673A-726F525D26C3') {
-        console.log('Found' + device.name);
+    if (device.name != null && device.address=='D479B6B9-D64B-9AD7-72E1-B96D1D670E5C') {
+        console.log('Found' + device.name + device.address);
         device.connect(connectSuccess, connectFailure);
         evothings.easyble.stopScan();
     }
@@ -182,6 +183,7 @@ function Release() {
 }
 
 function pressStart() {
+    app.connect();
     document.getElementById("startView").style.display="none";
     document.getElementById("controlsView").style.display="";
 }
