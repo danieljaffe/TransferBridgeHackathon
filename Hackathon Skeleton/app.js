@@ -116,10 +116,10 @@ app.sendData = function (data) {
             app.CHARACTERISTIC_UUID,
             data,
             function () {
-                Console.log('Succeed to send message!' + data);
+                console.log('Succeed to send message!' + data);
             },
             function (errorCode) {
-                Console.log('Failed to send message!' + errorCode);
+                console.log('Failed to send message!' + errorCode);
             }
         );
     }
@@ -154,39 +154,39 @@ function BaseForward() {
 }
 function BaseBackward(){
     console.log("BaseBackward called");
-    app.device && app.device.writeDataArray(new Uint8Array([4]), app.CHARACTERISTIC_UUID);
+    app.sendData([4]);
 }
 function ShoulderUp() {
     console.log("ShoulderUp called");
-    app.device && app.device.writeDataArray(new Uint8Array([5]), app.CHARACTERISTIC_UUID);
+    app.sendData([5]);
 }
 function ShoulderDown() {
     console.log("ShoulderDown called");
-    app.device && app.device.writeDataArray(new Uint8Array([6]), app.CHARACTERISTIC_UUID);
+    app.sendData([6]);
 }
 function ElbowFoward() {
     console.log("ElbowForward called");
-    app.device && app.device.writeDataArray(new Uint8Array([7]), app.CHARACTERISTIC_UUID);
+    app.sendData([7]);
 }
 function ElbowBackward() {
     console.log("ElbowBackward called");
-    app.device && app.device.writeDataArray(new Uint8Array([8]), app.CHARACTERISTIC_UUID);
+    app.sendData([8]);
 }
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
-    app.device && app.device.writeDataArray(new Uint8Array([9]), app.CHARACTERISTIC_UUID);
+    app.sendData([9]);
 }
 function WristTurnRight() {
     console.log("WristTurnRight called");
-    app.device && app.device.writeDataArray(new Uint8Array([10]), app.CHARACTERISTIC_UUID);
+    app.sendData([10]);
 }
 function Grip() {
     console.log("Grip called");
-    app.device && app.device.writeDataArray(new Uint8Array([11]), app.CHARACTERISTIC_UUID);
+    app.sendData([11]);
 }
 function Release() {
     console.log("Release called");
-    app.device && app.device.writeDataArray(new Uint8Array([12]), app.CHARACTERISTIC_UUID);
+    app.sendData([12]);
 }
 
 function pressStart() {
