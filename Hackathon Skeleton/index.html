@@ -39,7 +39,7 @@
 	<script src="libs/evothings/easyble/easyble.js"></script>
 
 	<!-- START VIEW -->
-	<div id="startView" style = "background-color: lightblue; display: none">
+	<div id="startView" style = "background-color: lightblue">
 		<h1 style="text-align:center; 
 		-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black" >
 		Robotic Arm Bluetooth</h1>
@@ -53,13 +53,13 @@
 				font-size: xx-large;
 				font-family: serif;
 				-webkit-text-fill-color: darkslateblue;' 
-				ontouchstart="/*TODO: start searching for devices*/"> Start </button>
+				ontouchstart="pressStart()"> Start </button>
 			</div>
 		
 	</div>
 
 	<!-- CONTROL PANEL -->
-	<div id='controlsView' class='wrapper'>
+	<div id='controlsView' class='wrapper' style = 'display: none'>
 
 		<div class='button-group vertical'>
 			<p class='group-title'>Wrist</p>
@@ -67,13 +67,13 @@
 
 			<div class='button' id = 'wristup' style = 'font-size: unset; background-color: skyblue;
 			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
-			 ontouchstart = "pressButton('wristup')" ontouchend = "unpress('wristup')">
+			 ontouchstart = "pressButton('wristup', WristTurnLeft())" ontouchend = "unpress('wristup')">
 				UP
 			</div>
 
 			<div class='button' id = 'wristdown' style = 'font-size: unset; background-color: skyblue;
 			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
-			 ontouchstart = "pressButton('wristdown')" ontouchend = "unpress('wristdown')">
+			 ontouchstart = "pressButton('wristdown', WristTurnRight())" ontouchend = "unpress('wristdown')">
 				DOWN
 			</div> 
 		</div>
@@ -155,12 +155,16 @@
 				</div>
 				<div class='horizontal'>
 					<div class='button' id = 'closebutton' style = 'font-size: unset; background-color: skyblue;
-					-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' ontouchstart = "pressButton('closebutton')" ontouchend = "unpress('closebutton')">
+					-webkit-text-fill-color: gold; 
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' 
+					ontouchstart = "pressButton('closebutton')" ontouchend = "unpress('closebutton')">
 						CLOSE
 					</div>
 			
 					<div class='button' id= 'openbutton' style = 'font-size: unset; background-color: skyblue;
-					-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
+					-webkit-text-fill-color: gold; 
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' 
+					ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
 						OPEN
 					</div>
 				</div>

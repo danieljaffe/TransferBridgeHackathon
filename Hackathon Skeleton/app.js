@@ -182,6 +182,6 @@ function Release() {
 }
 
 function pressStart() {
-    document.getElementById("startView").style.display="";
-    document.getElementById("controlsView").style.display="none";
+    document.getElementById("startView").style.display="none";
+    document.getElementById("controlsView").style.display="";
 }
