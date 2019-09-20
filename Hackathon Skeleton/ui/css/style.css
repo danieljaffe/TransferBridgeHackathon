@@ -58,14 +58,13 @@ body {
 
 .button {
     display: inline-block;
-	width: 7vh;
+	width: 20vw;
 	height: 7vh;
 	margin: 10px 0;
 	padding: 7px;
 	border: 2px solid black;
 	background: transparent;
 }
-
 .button p {
 	font-size: .8em;
 }

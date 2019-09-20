@@ -23,11 +23,11 @@
 <body style = "background-color: lightblue">
 
 	<header style = "background-color: white">
-		<button class="back" onclick="history.back()" style = 'background-color: navy;'>
+		<button class="back" ontouchstart="history.back()" style = 'background-color: navy;'>
 			<img src="res/left.png" />
 		</button>
 
-		<button id='disconnect' class="red small" onclick="/*TODO: disconnect from the connected device*/" disabled>Disconnect</button>
+		<button id='disconnect' class="red small" ontouchstart="/*TODO: disconnect from the connected device*/" disabled>Disconnect</button>
 
 		<img class="logotype" src="ui/images/logo.png" alt="Evothings" />
 	</header>
@@ -53,7 +53,7 @@
 				font-size: xx-large;
 				font-family: serif;
 				-webkit-text-fill-color: darkslateblue;' 
-				onclick="/*TODO: start searching for devices*/"> Start </button>
+				ontouchstart="/*TODO: start searching for devices*/"> Start </button>
 			</div>
 		
 	</div>
@@ -62,47 +62,70 @@
 	<div id='controlsView' class='wrapper' >
 
 		<div class='button-group vertical'>
-			<p class='group-title'>Title</p>
+			<p class='group-title'>Wrist</p>
 			<div class='data'></div>
 
-			<div class='button'>
+			<div class='button' id = 'wristup' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('wristup')" ontouchend = "unpress('wristup')">
+				UP
 			</div>
 
-			<div class='button'>
-				
+			<div class='button' id = 'wristdown' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('wristdown')" ontouchend = "unpress('wristdown')">
+				DOWN
 			</div> 
 		</div>
 
 		<div class='button-group vertical'>
-			<p class='group-title'>Title</p>
+			<p class='group-title'>Level</p>
 			<div class='data'></div>
 
-			<div class='button'>
+			<div class='button' id = 'levelup' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('levelup')" ontouchend = "unpress('levelup')">
+				UP
 			</div>
 
-			<div class='button'>
+			<div class='button' id = 'leveldown' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('leveldown')" ontouchend = "unpress('leveldown')">
+				DOWN
 			</div> 
 		</div>
 
 		<div class='button-group vertical'>
-			<p class='group-title'>Title</p>
+			<p class='group-title'>Shoulder</p>
 			<div class='data'></div>
 
-			<div class='button'>
+			<div class='button' id = 'forward' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('forward')" ontouchend = "unpress('forward')">
+				FWD
 			</div>
 
-			<div class='button'>
+			<div class='button' id = 'back' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('back')" ontouchend = "unpress('back')">
+				BACK
 			</div> 
 		</div>
 
 		<div class='button-group vertical'>
-			<p class='group-title'>Title</p>
+			<p class='group-title'>Elbow</p>
 			<div class='data'></div>
 
-			<div class='button'>
+			<div class='button' id = 'up' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('up')" ontouchend = "unpress('up')">
+				UP
 			</div>
 
-			<div class='button'>
+			<div class='button' id = 'down' style = 'font-size: unset; background-color: skyblue;
+			-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+			 ontouchstart = "pressButton('down')" ontouchend = "unpress('down')">
+				DOWN
 			</div>
 		</div>
 
@@ -113,11 +136,13 @@
 					<div class='data'></div>
 				</div>
 				<div class='horizontal'>
-					<div class='button'>
+					<div class='button' id = 'cclockwise' style = 'font-size: unset; background-color: skyblue;
+					-webkit-text-fill-color: gold; ' ontouchstart = "pressButton('cclockwise')" ontouchend = "unpress('cclockwise')">
 							<img src = 'counterclockwise.png' height = '100%'>
 					</div>
 			
-					<div class='button'>
+					<div class='button' id = 'clockwise' style = 'font-size: unset; background-color: skyblue;
+					-webkit-text-fill-color: gold;' ontouchstart = "pressButton('clockwise')" ontouchend = "unpress('clockwise')">
 							<img src = 'clockwise.png' height = '100%'>
 					</div>
 				</div>
@@ -129,13 +154,13 @@
 					<div class='data'></div>
 				</div>
 				<div class='horizontal'>
-					<div class='button' id = 'closebutton' style = 'font-size: unset; background-color: navy;
-					-webkit-text-fill-color: gold;' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
+					<div class='button' id = 'closebutton' style = 'font-size: unset; background-color: skyblue;
+					-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' ontouchstart = "pressButton('closebutton')" ontouchend = "unpress('closebutton')">
 						CLOSE
 					</div>
 			
-					<div class='button' id= 'openbutton' style = 'font-size: unset; background-color: navy;
-					-webkit-text-fill-color: gold;' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
+					<div class='button' id= 'openbutton' style = 'font-size: unset; background-color: skyblue;
+					-webkit-text-fill-color: gold; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black' ontouchstart = "pressButton('openbutton')" ontouchend = "unpress('openbutton')">
 						OPEN
 					</div>
 				</div>

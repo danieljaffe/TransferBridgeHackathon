@@ -27,12 +27,12 @@ app.showStart = function()
 
 function pressButton(elementid){
     let theid = elementid;
-document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
+    document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
 }
 
 function unpress(elementid){
     let theid = elementid;
-document.getElementById(`${theid}`).style.backgroundColor = 'navy';
+    document.getElementById(`${theid}`).style.backgroundColor = 'skyblue';
 }
 document.addEventListener( 
     'deviceready',
