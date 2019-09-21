@@ -133,60 +133,70 @@ app.receivedData = function (data) {
 
     }
 }
+function pressButton(elementid, callback){
+    let theid = elementid;
+    document.getElementById(`${theid}`).style.backgroundColor = 'goldenrod';
+    callback();
 
-let buttonOff = false;
-buttonOff = document.addEventListener('touchend', function(){
+}
+
+function unpress(elementid){
+    let theid = elementid;
+    document.getElementById(`${theid}`).style.backgroundColor = 'skyblue';
+    buttonOff();
+}
+function buttonOff() {
     console.log("finger removed");
-    app.sendData([0]);
-})
+    app.sendData([0x00]);
+}
 
 function BaseTurnLeft() {
     console.log("BaseTurnLeft called");
-    app.sendData([1]);
+    app.sendData([0x02]);
 }
 function BaseTurnRight() {
     console.log("BaseTurnRight called");
-    app.sendData([2]);
+    app.sendData([0x01]);
 }
 function BaseForward() {
     console.log("BaseForward called");
-    app.sendData([3]);    
+    app.sendData([0x0B]);    
 }
 function BaseBackward(){
     console.log("BaseBackward called");
-    app.sendData([4]);
+    app.sendData([0x0C]);
 }
 function ShoulderUp() {
     console.log("ShoulderUp called");
-    app.sendData([5]);
+    app.sendData([0x07]);
 }
 function ShoulderDown() {
     console.log("ShoulderDown called");
-    app.sendData([6]);
+    app.sendData([0x08]);
 }
-function ElbowFoward() {
+function ElbowForward() {
     console.log("ElbowForward called");
-    app.sendData([7]);
+    app.sendData([0x05]);
 }
 function ElbowBackward() {
     console.log("ElbowBackward called");
-    app.sendData([8]);
+    app.sendData([0x06]);
 }
 function WristTurnLeft() {
     console.log("WristTurnLeft called");
-    app.sendData([9]);
+    app.sendData([0x04]);
 }
 function WristTurnRight() {
     console.log("WristTurnRight called");
-    app.sendData([10]);
+    app.sendData([0x03]);
 }
 function Grip() {
     console.log("Grip called");
-    app.sendData([11]);
+    app.sendData([0x09]);
 }
 function Release() {
     console.log("Release called");
-    app.sendData([12]);
+    app.sendData([0x0A]);
 }
 
 function pressStart() {
@@ -194,4 +204,9 @@ function pressStart() {
     document.getElementById("startView").style.display="none";
     document.getElementById("controlsView").style.display="";
   
+}
+function pressDisconnect() {
+    document.getElementById("startView").style.display = "";
+    document.getElementById("controlsView").style.display="none";
+    app.disconnect();
 }
