@@ -58,14 +58,13 @@ body {
 
 .button {
     display: inline-block;
-	width: 7vh;
+	width: 20vw;
 	height: 7vh;
 	margin: 10px 0;
 	padding: 7px;
 	border: 2px solid black;
 	background: transparent;
 }
-
 .button p {
 	font-size: .8em;
 }
@@ -137,14 +136,27 @@ div.deviceContainer {
 
 
 /* START VIEW */
+#startwrapper {
+	width: 95vw;
+    height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
+}
 
-#wall-e-img {
+#teddybear {
 	display: block;
 	margin: auto;
+	border-radius: 300px;
 }
 
 
 /* EVOTHINGS BUTTONS */
+
+
+
 
 button.clear {
 	margin-left: 1%;
@@ -287,7 +299,7 @@ input.btn-group.yellow:checked + label {
 .color_wavegreen { color: #54dfb3; }
 .bg_green, input.green, button.green, ul.green li, label.green,
 input.green + label {
-	background-color: #54dfb3;
+	background-color: gold;
 }
 /* Downpressed button. */
 button.green:active, button.green.pressed,
